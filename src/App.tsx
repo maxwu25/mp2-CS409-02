@@ -13,7 +13,7 @@ import "./App.css";
 // --- Application Wrapper and Router Configuration ---
 const App: React.FC = () => {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/mp2-CS409-02" >
       <div className="app-container">
         <header className="app-header">
           <h1 className="app-title">Pokémon Explorer</h1>
