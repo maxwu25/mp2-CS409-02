@@ -1,3 +1,15 @@
+/* ===============================================================
+   PURPOSE: Provides base global CSS reset and font smoothing.
+   Works with normalize.css to ensure consistent styling across browsers.
+   =============================================================== */
+
+body {
+  background-color: #f0f4ff;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Base Font Setup --- */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- Code Block Font Style --- */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

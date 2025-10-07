@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
-}
+/* ===============================================================
+   PURPOSE: Defines global app-level styles for the React project.
+   Includes layout, color theme, navigation links, and typography.
+   =============================================================== */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  background-color: #e6ecff; 
   min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* --- Header Section --- */
+.app-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+/* --- Title Styling --- */
+.app-title {
+  font-size: 3rem;
+  font-family: "Pokemon Solid", "Comic Sans MS", "Poppins", sans-serif;
+  text-align: center;
+  color: #ffcc00; 
+  -webkit-text-stroke: 2px #3d7dca; 
+  letter-spacing: 4px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Navigation Below Title --- */
+.nav-under-title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* --- Navigation Links --- */
+.nav-link {
+  font-size: 1.1rem;
+  color: #3d7dca; 
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link:hover {
+  color:  #273fb9; 
+  border-bottom: 2px solid #3d7dca;
 }
+
+/* --- Main Section --- */
+.app-main {
+  padding: 1rem;
+}
+
+
