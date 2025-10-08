@@ -1,7 +1,7 @@
 // ===============================================================
 //  PURPOSE: Displays a searchable and sortable list of Pokémon.
-//  Allows users to filter by name, type, ability, or stats, and
-//  click a Pokémon to view detailed info.
+//  Allows users to filter by name or ID, and click a Pokémon
+//  to view detailed info.
 // ===============================================================
 
 import React, { useEffect, useState } from "react";
@@ -37,16 +37,6 @@ const ListView: React.FC = () => {
       switch (sortBy) {
         case "id":
           return i.id.toString().startsWith(query);
-        case "type":
-          return i.types.some((t) => t.toLowerCase().startsWith(query));
-        case "ability":
-          return i.abilities.some((a) => a.toLowerCase().startsWith(query));
-        case "hp":
-          return i.stats.hp.toString().startsWith(query);
-        case "attack":
-          return i.stats.attack.toString().startsWith(query);
-        case "defense":
-          return i.stats.defense.toString().startsWith(query);
         default:
           return i.name.toLowerCase().startsWith(query);
       }
@@ -56,21 +46,11 @@ const ListView: React.FC = () => {
       switch (sortBy) {
         case "id":
           return (a.id - b.id) * dir;
-        case "hp":
-          return (a.stats.hp - b.stats.hp) * dir;
-        case "attack":
-          return (a.stats.attack - b.stats.attack) * dir;
-        case "defense":
-          return (a.stats.defense - b.stats.defense) * dir;
-        case "type":
-          return (a.types[0] || "").localeCompare(b.types[0] || "") * dir;
-        case "ability":
-          return (a.abilities[0] || "").localeCompare(b.abilities[0] || "") * dir;
         default:
           return a.name.localeCompare(b.name) * dir;
       }
     });
-  
+
   // --- Render List with Search and Sorting Controls ---
   return (
     <div className={styles.container}>
@@ -95,11 +75,6 @@ const ListView: React.FC = () => {
           >
             <option value="name">Name</option>
             <option value="id">ID</option>
-            <option value="type">Type</option>
-            <option value="ability">Ability</option>
-            <option value="hp">HP</option>
-            <option value="attack">Attack</option>
-            <option value="defense">Defense</option>
           </select>
 
           <div className={styles.radioGroup}>
@@ -137,7 +112,9 @@ const ListView: React.FC = () => {
             >
               <img src={item.image} alt={item.name} />
               <div className={styles.cardInfo}>
-                <h3>{item.name}</h3>
+                <h3>
+                  #{item.id} {item.name}
+                </h3>
               </div>
             </li>
           ))}
